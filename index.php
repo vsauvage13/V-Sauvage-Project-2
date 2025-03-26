@@ -4,6 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_uri()); ?>" type="text/css" />
     <?php wp_head(); ?>
+    <?php the_title(); ?>
 </head>
 <body <?php body_class(); ?>>
     <h1><?php bloginfo('name'); ?></h1>
