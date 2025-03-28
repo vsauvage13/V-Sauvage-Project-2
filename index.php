@@ -10,6 +10,8 @@
     <h1><?php bloginfo('name'); ?></h1>
     <h2><?php bloginfo('description'); ?></h2>
 
+    <?php get_header(); ?>
+
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <!-- Display the post title inside an <h1> element -->
@@ -42,5 +44,6 @@
     
     <!-- Added wp_footer() before closing </body> tag -->
     <?php wp_footer(); ?>
+    <?php get_footer(); ?>
 </body>
 </html>
