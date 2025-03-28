@@ -58,6 +58,17 @@
     </section>
     <hr />
 
+<!-- Illustrations Block -->
+<section class="project-block">
+        <img src="<?php echo get_template_directory_uri(); ?>images/Illustrations-Pomponio-State-Beach.png" alt="Illustrations">
+        <div class="project-content">
+            <h3>ILLUSTRATIONS</h3>
+            <p>Whimsical, colourful illustrations, inspired by Vancouver Island and the Pacific Northwest. Each piece is crafted to excite, inspire, and bring your ideas to life.</p>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </section>
+    <hr />
+
         
         <?php wp_link_pages(); ?>
         <?php edit_post_link(); ?>
