@@ -33,6 +33,20 @@
         </div>
     </section>
 
+    <h2>FEATURED PROJECTS</h2>
+    <hr />
+
+     <!-- Digital Marketing Block -->
+     <section class="project-block">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/Digital-Marketing-CCC.png" alt="Digital Marketing">
+        <div class="project-content">
+            <h3>DIGITAL MARKETING</h3>
+            <p>Vibrant visuals meet smart strategy. From social media to campaigns, I blend funky designs with modern marketing to engage and connect.</p>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </section>
+    <hr />
+
         
         <?php wp_link_pages(); ?>
         <?php edit_post_link(); ?>
