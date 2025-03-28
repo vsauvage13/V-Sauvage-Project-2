@@ -47,6 +47,17 @@
     </section>
     <hr />
 
+<!-- Branding and Identity Block -->
+<section class="project-block reverse">
+        <div class="project-content">
+            <h3>BRANDING AND IDENTITY</h3>
+            <p>Playful, bold, and retro-inspired branding that tells your story. From logos to full identities, I create designs that connect and leave a lasting impression.</p>
+            <a href="#" class="btn">See More</a>
+        </div>
+        <img src="<?php echo get_template_directory_uri(); ?>images/Branding-CCC-Business-Cards.png" alt="Branding and Identity">
+    </section>
+    <hr />
+
         
         <?php wp_link_pages(); ?>
         <?php edit_post_link(); ?>
