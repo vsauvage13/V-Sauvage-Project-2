@@ -43,6 +43,10 @@
 
     <?php endif; ?>
     
+    <?php get_template_part( 'template-parts/content', 'cta' ); ?>
+
+
+
     <!-- Added wp_footer() before closing </body> tag -->
     <?php wp_footer(); ?>
     <?php get_footer(); ?>
