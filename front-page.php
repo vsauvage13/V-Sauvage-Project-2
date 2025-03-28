@@ -17,9 +17,13 @@
 
         <!-- Display the post title inside an <h1> element -->
         <h1><?php the_title(); ?></h1>
+        <!-- <h1>< ?php the_title(); ?></h1> -->
 
         <!-- Display the post content dynamically -->
         <?php the_content(); ?>
+        <!-- < ?php the_content(); ?> -->
+         <!-- TAke spaces out before? for above php if I want them back! -->
+
         
         <?php wp_link_pages(); ?>
         <?php edit_post_link(); ?>
