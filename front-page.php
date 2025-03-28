@@ -16,11 +16,9 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <!-- Display the post title inside an <h1> element -->
-        <h1><?php the_title(); ?></h1>
         <!-- <h1>< ?php the_title(); ?></h1> -->
 
         <!-- Display the post content dynamically -->
-        <?php the_content(); ?>
         <!-- < ?php the_content(); ?> -->
          <!-- TAke spaces out before? for above php if I want them back! -->
 
@@ -69,6 +67,31 @@
     </section>
     <hr />
 
+     <!-- Contact Section -->
+     <section class="contact-section">
+        <h3>Let’s Create Something Amazing!</h3>
+        <p>Ready to bring your bold ideas to life? Whether it’s branding, illustrations, or digital magic, I’d love to hear from you. Drop me a message, and let’s make something playful, colourful, and unforgettable together!</p>
+        <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+            <label for="full-name">Full Name (required)</label>
+            <input type="text" id="full-name" name="full-name" required>
+
+            <label for="email">Your Email (required)</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="service">What Can I Help You With?</label>
+            <select id="service" name="service">
+                <option value="illustrations">Illustrations</option>
+                <option value="branding">Branding</option>
+                <option value="digital-marketing">Digital Marketing</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="message">Your Message (required)</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
         
         <?php wp_link_pages(); ?>
         <?php edit_post_link(); ?>
