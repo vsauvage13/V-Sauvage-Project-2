@@ -24,6 +24,15 @@
         <!-- < ?php the_content(); ?> -->
          <!-- TAke spaces out before? for above php if I want them back! -->
 
+<!-- Hero Section -->
+<section class="hero-banner">
+        <div class="hero-content">
+            <h1>Welcome to Setting Sun Creative</h1>
+            <h4>Vienna May Sauvage – Graphic Designer & Illustrator</h4>
+            <p>Playful, whimsical, and colourful—my design style blends retro graphics with a modern twist, many inspired by beautiful Vancouver Island. With a background in digital marketing, photography, and illustration, I create bold, joyful designs that connect emotionally and visually. Let’s create, together!</p>
+        </div>
+    </section>
+
         
         <?php wp_link_pages(); ?>
         <?php edit_post_link(); ?>
