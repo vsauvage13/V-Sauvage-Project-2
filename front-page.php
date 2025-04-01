@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_uri()); ?>" type="text/css" />
     <?php wp_head(); ?>
-    <?php the_title(); ?>
+    <!-- < ?php the_title(); ?> -->
 </head>
+
 <body <?php body_class(); ?>>
-    <h1><?php bloginfo('name'); ?></h1>
+    <!-- <h1>< ?php bloginfo('name'); ?></h1> -->
     <h2><?php bloginfo('description'); ?></h2>
 
     <?php get_header(); ?>
     <!-- Template Name: front-page -->
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-        <!-- Display the post title inside an <h1> element -->
-        <!-- <h1>< ?php the_title(); ?></h1> -->
-
-        <!-- Display the post content dynamically -->
-        <!-- < ?php the_content(); ?> -->
-         <!-- TAke spaces out before? for above php if I want them back! -->
-
-<!-- Hero Section -->
-<section class="hero-banner">
+    <!-- Hero Section -->
+    <section class="hero-banner">
         <div class="hero-content">
             <h1>Welcome to Setting Sun Creative</h1>
             <h4>Vienna May Sauvage – Graphic Designer & Illustrator</h4>
@@ -34,41 +27,69 @@
     <h2>FEATURED PROJECTS</h2>
     <hr />
 
-     <!-- Digital Marketing Block -->
-     <section class="project-block">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/Digital-Marketing-CCC.png" alt="Digital Marketing">
-        <div class="project-content">
-            <h3>DIGITAL MARKETING</h3>
-            <p>Vibrant visuals meet smart strategy. From social media to campaigns, I blend funky designs with modern marketing to engage and connect.</p>
-            <a href="#" class="btn">See More</a>
-        </div>
-    </section>
-    <hr />
+    <!-- Featured Projects Section -->
+    <section class="featured-projects">
+        <?php
+        // Query to get the latest posts or custom post type if needed
+        $args = array(
+            'post_type'      => 'post', // Default post type (change if using a custom one)
+            'posts_per_page' => 6,      // Number of posts to display
+            'order'          => 'DESC', // Show newest posts first
+        );
 
-<!-- Branding and Identity Block -->
-<section class="project-block reverse">
-        <div class="project-content">
-            <h3>BRANDING AND IDENTITY</h3>
-            <p>Playful, bold, and retro-inspired branding that tells your story. From logos to full identities, I create designs that connect and leave a lasting impression.</p>
-            <a href="#" class="btn">See More</a>
-        </div>
-        <img src="<?php echo get_template_directory_uri(); ?>images/Branding-CCC-Business-Cards.png" alt="Branding and Identity">
-    </section>
-    <hr />
+        $query = new WP_Query($args);
 
-<!-- Illustrations Block -->
-<section class="project-block">
-        <img src="<?php echo get_template_directory_uri(); ?>images/Illustrations-Pomponio-State-Beach.png" alt="Illustrations">
-        <div class="project-content">
-            <h3>ILLUSTRATIONS</h3>
-            <p>Whimsical, colourful illustrations, inspired by Vancouver Island and the Pacific Northwest. Each piece is crafted to excite, inspire, and bring your ideas to life.</p>
-            <a href="#" class="btn">See More</a>
-        </div>
-    </section>
-    <hr />
+        // Check if there are any posts
+        if ($query->have_posts()) :
 
-     <!-- Contact Section -->
-     <section class="contact-section">
+            while ($query->have_posts()) : $query->the_post();
+
+                // Get ACF custom fields
+                $project_title       = get_field('project_title');
+                $project_description = get_field('project_description');
+                $project_image       = get_field('project_image');
+                $project_button      = get_field('project_button');
+        ?>
+                <article class="project-item">
+                    <!-- Display custom project image if available -->
+                    <?php if ($project_image) : ?>
+                        <a href="<?php echo esc_url($project_button); ?>" target="_blank">
+                            <img src="<?php echo esc_url($project_image['url']); ?>" alt="<?php echo esc_attr($project_image['alt']); ?>" />
+                        </a>
+                    <?php endif; ?>
+
+                    <!-- Display project title -->
+                    <h3>
+                        <?php if ($project_button) : ?>
+                            <a href="<?php echo esc_url($project_button); ?>" target="_blank">
+                                <?php echo esc_html($project_title); ?>
+                            </a>
+                        <?php else : ?>
+                            <?php echo esc_html($project_title); ?>
+                        <?php endif; ?>
+                    </h3>
+
+                    <!-- Display project description -->
+                    <p><?php echo esc_html($project_description); ?></p>
+
+                    <!-- Display project button if available -->
+                    <?php if ($project_button) : ?>
+                        <a href="<?php echo esc_url($project_button); ?>" class="project-btn" target="_blank">View Project</a>
+                    <?php endif; ?>
+                </article>
+            <?php
+            endwhile;
+            wp_reset_postdata(); // Reset post data to avoid conflicts
+        else :
+            ?>
+            <p>No projects found. Check back soon!</p>
+        <?php endif; ?>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
         <h3>Let’s Create Something Amazing!</h3>
         <p>Ready to bring your bold ideas to life? Whether it’s branding, illustrations, or digital magic, I’d love to hear from you. Drop me a message, and let’s make something playful, colourful, and unforgettable together!</p>
         <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
@@ -92,35 +113,14 @@
             <button type="submit">Send</button>
         </form>
     </section>
-        
-        <?php wp_link_pages(); ?>
-        <?php edit_post_link(); ?>
 
-    <?php endwhile; ?>
 
-        <?php
-        if (get_next_posts_link()) {
-            next_posts_link();
-        }
-        ?>
-        <?php
-        if (get_previous_posts_link()) {
-            previous_posts_link();
-        }
-        ?>
-
-    <?php else : ?>
-
-        <p>No posts found. :(</p>
-
-    <?php endif; ?>
-    
-    <?php get_template_part( 'template-parts/content', 'cta' ); ?>
+    <?php get_template_part('template-parts/content', 'cta'); ?>
 
 
 
     <!-- Added wp_footer() before closing </body> tag -->
-    <?php wp_footer(); ?>
     <?php get_footer(); ?>
 </body>
+
 </html>
