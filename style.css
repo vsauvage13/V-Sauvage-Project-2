@@ -234,3 +234,47 @@ footer a:hover {
       width: 100%;
   }
 }
+
+
+/* Main styling for the project post */
+.project-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.project-header {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.project-title {
+  font-size: 32px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.project-meta {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.project-content {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-top: 20px;
+}
+
+.project-footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
+
+.project-categories {
+  font-weight: bold;
+}
