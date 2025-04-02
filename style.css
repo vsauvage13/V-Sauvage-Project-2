@@ -178,8 +178,49 @@ a {
   font-size: 18px;
 }
 
-.contact-section button:hover {
-  background-color: #005e8c;
+.contact-form .wpcf7-form input:focus,
+.contact-form .wpcf7-form textarea:focus,
+.contact-form .wpcf7-form select:focus {
+  border-color: #00a4a6;
+  outline: none;
+}
+
+.contact-section .wpcf7-submit {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00a4a6 !important;
+  color: #fafaf0;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.contact-section .wpcf7-submit:hover {
+  background-color: #fdd655 !important;
+  color: #fafaf0;
+}
+
+.contact-form label {
+  font-size: 14px;
+  color: #00a4a6;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.wpcf7-response-output {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #fafaf0;
+  text-align: center;
+}
+
+.wpcf7-response-output.wpcf7-mail-sent-ok {
+  color: #4caf50;
+}
+
+.wpcf7-response-output.wpcf7-validation-errors {
+  color: #f44336;
 }
 
 /* 4. Footer Section (General Footer Style) */
