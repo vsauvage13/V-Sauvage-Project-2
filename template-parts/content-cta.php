@@ -1,4 +1,4 @@
 
-<div >
-    <p>This is the call-to-action</p>
+<div class="cta">
+    <h2>Contact Me Today!</h2>
 </div>
