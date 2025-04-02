@@ -40,10 +40,32 @@ a {
 
 /* 1. Hero Section */
 .hero-banner {
-  background: #003366;
-  color: white;
-  padding: 50px 20px;
-  text-align: center;
+  position: relative;
+  background-image: url('/images/Vienna-May-Sauvage-Header-Image.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-banner .hero-content {
+  position: relative;
+  padding: 30px;
+  max-width: 90%;
+  z-index: 2;
 }
 
 .hero-banner .hero-content h1 {
