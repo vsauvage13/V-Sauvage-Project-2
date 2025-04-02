@@ -37,6 +37,49 @@ a {
       interpolate-size: allow-keywords;
   }
 }
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header-logo {
+  max-width: 200px;
+  height: auto;
+  margin-right: 20px;
+}
+
+header .menu-primary-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .menu-primary-container ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+header .menu-primary-container ul li a {
+  color: #fafaf0;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+header .menu-primary-container ul li a:hover {
+  color: #fdd655;
+}
+
+.custom-hr {
+  border: 0;
+  height: 2px;
+  background-color: #fd6f48;
+}
 
 /* 1. Hero Section */
 .hero-banner {
