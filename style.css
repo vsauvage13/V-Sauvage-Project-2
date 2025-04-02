@@ -183,26 +183,55 @@ a {
 }
 
 /* 4. Footer Section (General Footer Style) */
+
 footer {
-  background-color: #003366;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: 50px;
+  background-color: #002829;
+  color: #fafaf0;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-footer p {
-  font-size: 14px;
+.footer-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-right: 20px;
 }
 
-footer a {
-  color: #ffbe0b;
+footer .menu-primary-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+footer .menu-primary-container ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+footer .menu-primary-container ul li a {
+  color: #fafaf0;
   text-decoration: none;
-  font-weight: bold;
+  padding: 10px 15px;
+  display: block;
 }
 
-footer a:hover {
-  text-decoration: underline;
+footer .menu-primary-container ul li a:hover {
+  color: #fdd655;
+}
+
+.footer-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 10px;
 }
 
 /* 5. Responsive Styles */
