@@ -24,8 +24,11 @@
         </div>
     </section>
 
-    <h2>FEATURED PROJECTS</h2>
-    <hr />
+   <section class="featured-projects-title"><h2>FEATURED PROJECTS</h2>
+
+   </section> 
+    <hr class="custom-hr" />
+
 
     <!-- Featured Projects Section -->
     <section class="featured-projects">
@@ -89,6 +92,8 @@
 
 
     <!-- Contact Section -->
+    <hr class="custom-hr" />
+
     <section class="contact-section">
         <h3>Let’s Create Something Amazing!</h3>
         <p>Ready to bring your bold ideas to life? Whether it’s branding, illustrations, or digital magic, I’d love to hear from you. Drop me a message, and let’s make something playful, colourful, and unforgettable together!</p>
@@ -98,10 +103,11 @@
         </div>
     </section>
 
-
+    <hr class="custom-hr" />
     <?php get_template_part('template-parts/content', 'cta'); ?>
 
 
+    <hr class="custom-hr" />
 
     <!-- Added wp_footer() before closing </body> tag -->
     <?php get_footer(); ?>
