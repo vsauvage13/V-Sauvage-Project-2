@@ -168,14 +168,51 @@ a {
   border: 1px solid #ccc;
 }
 
-.contact-section button {
-  padding: 12px 30px;
-  background-color: #0073aa;
-  color: white;
+.cta {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #00a4a6;
+  text-align: center;
+}
+
+.contact-page h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
   border: none;
+  visibility: hidden;
+}
+
+
+/* Contact Form Styling */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+  border: 2px solid #fd6f48;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .wpcf7-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .wpcf7-form input,
+.contact-form .wpcf7-form textarea,
+.contact-form .wpcf7-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #fafaf0;
 }
 
 .contact-form .wpcf7-form input:focus,
