@@ -16,7 +16,7 @@
     <!-- Template Name: front-page -->
 
     <!-- Hero Section -->
-    <section class="hero-banner">
+    <section class="hero-banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/Vienna-May-Sauvage-Header-Image.png');">
         <div class="hero-content">
             <h1>Welcome to Setting Sun Creative</h1>
             <h4>Vienna May Sauvage – Graphic Designer & Illustrator</h4>
